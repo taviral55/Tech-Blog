@@ -21,7 +21,7 @@ const sess = {
 
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3040;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
@@ -36,5 +36,5 @@ app.set('view engine', 'handlebars');
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening on http://localhost:3001/'));
+  app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}/`));
 });
